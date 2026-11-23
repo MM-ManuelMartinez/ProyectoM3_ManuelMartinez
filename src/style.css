@@ -1,0 +1,261 @@
+/* ==========================================================
+   VARIABLES
+   Todos los colores se definen una sola vez acá.
+   Si querés cambiar un color, lo cambiás en un solo lugar.
+   ========================================================== */
+:root {
+    --color-fondo: black;
+    --color-texto: white;
+    --color-superficie: rgb(29, 32, 34);      /* tarjetas */
+    --color-header-chat: rgb(130, 132, 133);
+    --color-borde: rgb(51, 49, 49);
+    --color-acento: rgb(94, 94, 175);
+    --color-burbuja-usuario: white;
+    --color-burbuja-ia: grey;
+    --color-texto-burbuja: black;
+
+    --fuente-principal: "Righteous", sans-serif;
+}
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+/* ==========================================================
+   LAYOUT GENERAL
+   ========================================================== */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin-inline: auto;
+}
+
+main {
+    flex: 1;
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+.header-principal {
+    position: relative;
+}
+
+.header-principal::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 1%;
+    width: 98%;
+    height: 1px;
+    background-color: var(--color-borde);
+}
+
+.navbar-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+}
+
+.logo-principal {
+    width: 170px;
+}
+
+.list-item-principal {
+    display: flex;
+}
+
+.list-item-principal li a {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.list-item-principal li a:hover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: var(--color-acento);
+}
+
+/* ==========================================================
+   HOME
+   ========================================================== */
+.home-info h1 {
+    font-size: larger;
+    margin: 1rem 1rem 0.4rem 1rem;
+}
+
+.home-info p {
+    font-size: large;
+    margin: 0 1rem 1rem 1.2rem;
+}
+
+.tarjeta-personaje {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 98%;
+    margin-inline: auto;
+    padding-block: 0.4rem;
+    padding-inline: 0.5rem 1rem;
+    background-color: var(--color-superficie);
+}
+
+.tarjeta-personaje img {
+    width: 4rem;
+}
+
+.tarjeta-personaje h2 {
+    font-size: larger;
+}
+
+.tarjeta-personaje p {
+    font-size: large;
+}
+
+.tarjeta-personaje span {
+    margin-left: auto;
+}
+
+/* ==========================================================
+   CHAT
+   ========================================================== */
+#chat {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.header-chat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: var(--color-header-chat);
+}
+
+.header-chat img {
+    width: 3.5rem;
+    margin-left: 0.5rem;
+}
+
+.header-chat h1 {
+    font-size: larger;
+}
+
+.header-chat p {
+    font-size: large;
+}
+
+.header-chat a {
+    margin-left: auto;
+    margin-right: 0.6rem;
+    padding: 1rem;
+}
+
+/* --- Mensajes --- */
+.mensajes-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    list-style: none;
+}
+
+.mensajes-container li {
+    max-width: 75%;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: var(--color-texto-burbuja);
+}
+
+.mensajes-container .usuario {
+    align-self: flex-end;
+    background-color: var(--color-burbuja-usuario);
+}
+
+.mensajes-container .ia {
+    align-self: flex-start;
+    background-color: var(--color-burbuja-ia);
+}
+
+/* --- Formulario --- */
+.formulario-chat {
+    display: flex;
+    width: 100%;
+}
+
+/* Oculta el label a la vista, pero los lectores de pantalla lo siguen leyendo */
+.formulario-chat label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Estilos compartidos por el input y el botón */
+.formulario-chat input,
+.formulario-chat button {
+    height: 3rem;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    font-size: large;
+    font-family: inherit;
+}
+
+.formulario-chat input {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 0.5rem;
+}
+
+.formulario-chat button {
+    padding-inline: 1.5rem;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+.footer-principal {
+    margin-inline: auto;
+    padding: 1rem;
+}
