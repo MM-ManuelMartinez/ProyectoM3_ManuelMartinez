@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+
+    <title>CharactrAI</title>
+</head>
+<body class="container">
+    <header class="header-principal">
+        <nav class="navbar-principal">
+            <a href="/home">
+                <img src="assets/logo.png" alt="charactrAI - ir al inicio" class="logo-principal">
+            </a>
+            <ul class="list-item-principal">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="home-info">
+                <h1>
+                Selecciona tu personaje favorito
+                </h1>
+                <p>
+                y hacele las preguntas que siempre le quisiste hacer...
+                </p>
+            </div>
+
+            <a href="/chat">
+                <article class="tarjeta-personaje">
+                    <img src="assets/sherlock-holmes.png" alt="">
+                    <div>
+                        <h2>Sherlock Holmes</h2>
+                        <p>Detective privado</p>
+                    </div>
+                    <span aria-hidden="true">🟢</span>
+                </article>
+            </a>
+        </section>
+
+        
+        <section id="chat">
+            <header class="header-chat">
+                <img src="assets/sherlock-holmes.png" alt="">
+                <div>
+                    <h1>Sherlock Holmes</h1>
+                    <p>Detective privado</p>
+                </div>
+                <a href="/home" aria-label="Cerrar chat - ir a Home">
+                    <span class="material-icons" aria-hidden="true">
+                        close
+                    </span>
+                </a>
+            </header>
+        
+            <ol id="mensajes-container" class="mensajes-container">
+                <li class="usuario">
+                    <p>Hola como andas?</p>
+                </li>
+                <li class="ia">
+                    <p>Lorem, ipsum dolor sit 
+                        amet consectetur adipisicing 
+                        elit. Delectus, perspiciatis 
+                        sed quaerat voluptate ea
+                         obcaecati saepe suscipit 
+                         laudantium, velit dolor 
+                         omnis! Doloribus reiciendis 
+                         maiores neque eligendi ipsa.
+                          Vitae, repellendus laborum!
+                    </p>
+                </li>
+                <li class="usuario">
+                    <p>Me alegro, gracias por tu informacion.</p>
+                </li>
+                <li class="ia">
+                    <p>Lorem, ipsum dolor sit 
+                        amet consectetur adipisicing 
+                        elit. Delectus, perspiciatis 
+                        sed quaerat voluptate ea
+                         obcaecati saepe suscipit 
+                         laudantium, velit dolor 
+                         omnis! Doloribus reiciendis 
+                         maiores neque eligendi ipsa.
+                          Vitae, repellendus laborum!
+                    </p>
+                </li>
+                <li class="usuario">
+                    <p>Me alegro, gracias por tu informacion.</p>
+                </li>
+            </ol>
+        
+            <form class="formulario-chat">
+                <label for="input-mensaje">Escribi tu mensaje</label>
+                <input type="text" placeholder="Escribi tu mensaje..." id="input-mensaje" required autocomplete="off">
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+    </main>
+    <footer class="footer-principal">
+        <p>&copy; 2026 CharactrAI · Proyecto Integrador Henry</p>
+    </footer>
+</body>
+</html>
